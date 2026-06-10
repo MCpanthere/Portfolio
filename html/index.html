@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio | Développeur & Administrateur Systèmes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="apple-nav">
+        <div class="nav-container">
+            <span class="nav-logo">Portfolio</span>
+            <div class="nav-links">
+                <a href="#projets-cyber">Sécurité</a>
+                <a href="#projets-sysadmin">Système & Réseau</a>
+                <a href="#projets-dev">Développement</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <span class="hero-subtitle">Étudiant en Informatique</span>
+            <h1 class="hero-title">Concevoir des solutions fiables, sécurisées et performantes.</h1>
+            <p class="hero-description">
+                Passionné par la cybersécurité, l'administration système et le développement logiciel. 
+                Ce portfolio rassemble mes réalisations concrètes, de la sécurisation d'infrastructures 
+                au développement d'outils automatisés, démontrant ma capacité à analyser des menaces et manager des projets techniques.
+            </p>
+        </div>
+    </header>
+
+    <main class="main-content container">
+
+        <section id="projets-cyber" class="category-section">
+            <h2 class="category-title">Sécurité & Analyse de Menaces</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <span class="badge badge-cyber">Cybersécurité</span>
+                    <h3>Analyse Infostealer & Redondance</h3>
+                    <p class="project-summary">Étude d'un malware de type usurpation de données et implémentation d'une option de redondance sur disque.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Analyse de vulnérabilité et gestion des risques de perte de données.</p>
+                        <p><strong>Tâche :</strong> Sécuriser les données face aux malwares et contrer les pannes matérielles.</p>
+                        <p><strong>Action :</strong> Conception d'un système de redondance de stockage pour protéger les logs critiques.</p>
+                        <p><strong>Résultat :</strong> Résilience des données accrue et meilleure compréhension des mécanismes d'infection.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="badge badge-cyber">Sécurité</span>
+                    <h3>Anonymator (Optimisation)</h3>
+                    <p class="project-summary">Amélioration et durcissement d'un système d'anonymisation du trafic réseau.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Projet axé sur la confidentialité et la protection de la vie privée en ligne.</p>
+                        <p><strong>Tâche :</strong> Améliorer le système existant pour réduire les fuites de métadonnées et optimiser les performances.</p>
+                        <p><strong>Action :</strong> Audit du code existant, réécriture des tunnels de routage et implémentation de protocoles de chiffrement plus robustes.</p>
+                        <p><strong>Résultat :</strong> Chiffrement renforcé et réduction du temps de latence du script de routage.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projets-sysadmin" class="category-section">
+            <h2 class="category-title">Système & Administration Réseau</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <span class="badge badge-sys">Infrastructure</span>
+                    <h3>NAS & Sauvegardes Automatisées</h3>
+                    <p class="project-summary">Configuration complète d'un serveur de stockage en réseau avec automatisation des backups.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Besoin de centraliser et sécuriser l'ensemble des données locales.</p>
+                        <p><strong>Tâche :</strong> Automatiser les sauvegardes régulières sans intervention humaine.</p>
+                        <p><strong>Action :</strong> Déploiement de scripts de synchronisation (crontab/rsync) et gestion des droits d'accès utilisateurs.</p>
+                        <p><strong>Résultat :</strong> Système de backup 100% autonome et sécurisé contre les pertes accidentelles.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="badge badge-sys">Hardware / 3D</span>
+                    <h3>Rack Serveur de Maison</h3>
+                    <p class="project-summary">Modélisation et impression 3D d'une structure de rack sur-mesure pour centraliser le matériel réseau.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Optimisation de l'espace et du refroidissement pour mon propre serveur web de test.</p>
+                        <p><strong>Tâche :</strong> Concevoir un boîtier solide, ventilé et modulaire.</p>
+                        <p><strong>Action :</strong> Design des pièces sur logiciel de CAO, impression 3D et assemblage mécanique (vis de fixation spécifiques).</p>
+                        <p><strong>Résultat :</strong> Structure propre, réduction de la température des composants de 15% et hébergement stable.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projets-dev" class="category-section">
+            <h2 class="category-title">Développement Logiciel</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <span class="badge badge-dev">Génie Logiciel</span>
+                    <h3>Earth Tech Project</h3>
+                    <p class="project-summary">Développement d'une application axée sur les problématiques environnementales.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Projet collaboratif d'ingénierie logicielle à impact environnemental.</p>
+                        <p><strong>Tâche :</strong> Créer une interface intuitive pour traiter et visualiser des données écologiques complexes.</p>
+                        <p><strong>Action :</strong> Architecture du code propre (MVC) et intégration d'API de données géographiques.</p>
+                        <p><strong>Résultat :</strong> Application fonctionnelle présentée avec succès, renforcement du travail en équipe.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="badge badge-dev">Web</span>
+                    <h3>Projet Web Dynamique</h3>
+                    <p class="project-summary">Conception et développement d'un site web complet intégrant une base de données.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Projet académique visant à maîtriser les technologies web modernes.</p>
+                        <p><strong>Tâche :</strong> Développer une application web dynamique, interactive et sécurisée contre les injections.</p>
+                        <p><strong>Action :</strong> Création du backend, gestion de la base de données et intégration d'un design adaptatif.</p>
+                        <p><strong>Résultat :</strong> Plateforme fluide et sécurisée, validation complète des compétences Full-Stack.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="badge badge-dev">Algorithmique</span>
+                    <h3>Gestion de Championnat F1</h3>
+                    <p class="project-summary">Mini-projet d'application logicielle permettant de simuler et gérer un championnat de Formule 1.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Défi algorithmique personnel / académique.</p>
+                        <p><strong>Tâche :</strong> Modéliser les écuries, les pilotes, les scores et mettre à jour le classement en direct.</p>
+                        <p><strong>Action :</strong> Utilisation de structures de données avancées (tableaux d'objets, tris de classements).</p>
+                        <p><strong>Résultat :</strong> Logique logicielle solide, gestion parfaite des cas particuliers (égalité de points).</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="badge badge-dev">Langage C</span>
+                    <h3>Image-Processing en C</h3>
+                    <p class="project-summary">Développement d'un outil en C bas niveau pour appliquer des filtres et transformations d'images.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Immersion dans l'allocation mémoire et le traitement brut de données.</p>
+                        <p><strong>Tâche :</strong> Lire un fichier image bitmap (.bmp) et modifier ses pixels (niveaux de gris, flou, etc.).</p>
+                        <p><strong>Action :</strong> Manipulation de pointeurs, allocation dynamique et algorithmes de traitement de matrices.</p>
+                        <p><strong>Résultat :</strong> Application ultra-rapide sans fuite mémoire (vérifiée avec Valgrind).</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="badge badge-dev">Réseau / Architecture</span>
+                    <h3>Fork-Knight Matchmaker System</h3>
+                    <p class="project-summary">Conception d'un système d'appariement (matchmaking) pour serveurs de jeux en ligne.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Problématique de mise en relation de joueurs selon leur niveau de jeu (MMR).</p>
+                        <p><strong>Tâche :</strong> Créer une file d'attente optimisée et équitable en temps réel.</p>
+                        <p><strong>Action :</strong> Implémentation d'un algorithme de tri et de gestion de files d'attente asynchrones.</p>
+                        <p><strong>Résultat :</strong> Temps d'attente minimisé et équilibre des parties garanti.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="badge badge-dev">Python / Jeu</span>
+                    <h3>Pyfort : Jeu Vidéo Python</h3>
+                    <p class="project-summary">Création d'un jeu de stratégie/survie complet en Python.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Projet de programmation orientée objet (POO).</p>
+                        <p><strong>Tâche :</strong> Développer un moteur de jeu fluide avec sauvegarde des scores et IA ennemie basique.</p>
+                        <p><strong>Action :</strong> Structure en classes, utilisation d'une bibliothèque graphique (Pygame) et gestion des collisions.</p>
+                        <p><strong>Résultat :</strong> Jeu parfaitement jouable, code hautement réutilisable et modulaire.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="badge badge-dev">Python / Script</span>
+                    <h3>Re-scaler d'images</h3>
+                    <p class="project-summary">Script d'automatisation pour redimensionner des lots d'images à des tailles spécifiques en pixels.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Besoin d'optimiser rapidement les images pour des intégrations web.</p>
+                        <p><strong>Tâche :</strong> Éviter le traitement manuel long et répétitif image par image.</p>
+                        <p><strong>Action :</strong> Écriture d'un script utilisant la bibliothèque Pillow pour traiter un dossier entier en un clic.</p>
+                        <p><strong>Résultat :</strong> Gain de temps massif, images redimensionnées proprement en gardant le ratio d'aspect.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="apple-footer">
+        <div class="container">
+            <p>© 2026 | Portfolio professionnel. Conçu avec soin.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
