@@ -112,6 +112,7 @@
         .star-heading.tache { color: #ff9500; }     /* Orange */
         .star-heading.action { color: #34c759; }    /* Vert */
         .star-heading.resultat { color: #5856d6; }  /* Violet */
+        .star-heading.roadmap { color: #00a3a6; }   /* Cyan /
 
         .star-text-block {
             background-color: #ffffff; /* Blanc pur pour faire ressortir les fiches */
@@ -180,6 +181,69 @@
                 top: 0;
             }
         }
+        /* --- Conteneur de la fenêtre vidéo style macOS --- */
+        .video-window-container {
+            background-color: #ffffff;
+            border: 1px solid #e8e8ed;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06); /* Ombre douce et profonde */
+            overflow: hidden;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* Barre supérieure de la fenêtre */
+        .window-header {
+            background-color: #f5f5f7;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: relative;
+            border-bottom: 1px solid #e8e8ed;
+        }
+
+        /* Les 3 boutons de contrôle Apple */
+        .window-dots {
+            display: flex;
+            gap: 8px;
+            position: absolute;
+            left: 16px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-close { background-color: #ff5f56; }
+        .dot-minimize { background-color: #ffbd2e; }
+        .dot-expand { background-color: #27c93f; }
+
+        /* Titre au centre de la barre */
+        .window-title {
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            color: #86868b;
+            font-weight: 500;
+        }
+
+        /* Contenu de la fenêtre (la vidéo) */
+        .window-content {
+            background-color: #1c1c1e; /* Fond sombre neutre pour la vidéo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .case-study-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -208,7 +272,7 @@
                 
                 <div class="sidebar-meta">
                     <span class="meta-label">Type de Projet</span>
-                    <p style="font-size: 14px; color: #1d1d1f; font-weight: 500;">Recherche & Développement Personnel</p>
+                    <p style="font-size: 14px; color: #1d1d1f; font-weight: 500;">Projet personnel face à une problématique réelle rencontrée en entreprise</p>
                 </div>
 
                 <div class="sidebar-meta">
@@ -226,7 +290,7 @@
             <div class="project-content">
                 
                 <div class="brief-box">
-                    NEURO-SAS répond à une problématique critique et ultra-récente : sécuriser l'usage des intelligences artificielles génératives en entreprise en éliminant les risques de fuite de données vers des serveurs tiers.
+                    NEURO-SAS répond à une problématique critique et ultra-récente : <strong>sécuriser</strong> l'usage des intelligences artificielles génératives en entreprise <strong>en éliminant les risques de fuite de données</strong> vers des serveurs tiers.
                 </div>
 
                 <section class="star-section">
@@ -243,7 +307,7 @@
                         <span>●</span> Tâche
                     </div>
                     <div class="star-text-block">
-                        L'objectif était de concevoir un "sas de purification" souverain et local. L'application devait être capable d'intercepter les fichiers (PDF/DOCX), d'isoler l'intégralité des chaînes identifiables et des visuels compromettants, tout en optimisant la détection pour qu'un petit modèle de langage s'exécutant localement sur un poste de travail achemine un niveau de fiabilité d'entreprise.
+                        L'objectif était de concevoir un "sas de purification" souverain et local. L'application devait être capable de recevoir des fichiers (PDF/DOCX), d'isoler l'intégralité des chaînes identifiables et des visuels compromettants, tout en optimisant la détection pour qu'un petit modèle de langage s'exécutant localement sur un poste de travail présélectionne les éléments à cacher.
                     </div>
                 </section>
 
@@ -267,6 +331,40 @@
                     </div>
                     <div class="star-text-block">
                         Architecture logicielle finalisée et cœur de calcul opérationnel. Le système garantit un traitement 100 % local (aucune donnée brute ne transite par Internet). Le pipeline génère un document final expurgé, prêt à être soumis aux LLM tiers en toute conformité. La sécurité du code source lui-même a été intégrée via des politiques d'exclusion strictes dans le fichier <code>.gitignore</code>.
+                    </div>
+                </section>
+                <div class="video-window-container">
+    <div class="window-header">
+        <div class="window-dots">
+            <span class="dot dot-close"></span>
+            <span class="dot dot-minimize"></span>
+            <span class="dot dot-expand"></span>
+        </div>
+        <div class="window-title">Démonstration NEURO-SAS — Cockpit DPO</div>
+    </div>
+    <div class="window-content">
+        <video autoplay loop muted playsinline class="case-study-video" id="case-study-video">
+            <source src="../images/neuro-sas-preview.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+    </div>
+</div>
+
+<script>
+    // Optionnel : accélère aussi la vidéo sur cette page si besoin (ex: 2x)
+    document.getElementById('case-study-video').playbackRate = 2.0;
+</script>
+
+                <section class="star-section">
+                    <div class="star-heading roadmap">
+                        <span>●</span> Améliorations futures & Perspectives
+                    </div>
+                    <div class="star-text-block">
+                        Afin de faire évoluer le prototype vers une version de niveau production, deux axes de recherche et développement sont planifiés :
+                        <ul>
+                            <li><strong>Optimisation de la détection sémantique :</strong> Fine-tuning de prompts et implémentation de techniques de RAG léger pour aider les petits modèles de langage locaux (LLM) à mieux appréhender les jargon métiers spécifiques.</li>
+                            <li><strong>Analyse de contenu multimodal :</strong> Intégration d'outils d'OCR avancés (Vision LLM ou Tesseract) permettant d'analyser le texte directement incrusté dans les images et de censurer intelligemment les logos ou signatures compromettantes.</li>
+                        </ul>
                     </div>
                 </section>
 
