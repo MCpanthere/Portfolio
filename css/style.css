@@ -133,6 +133,7 @@ html {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .project-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
@@ -197,4 +198,20 @@ html {
     .hero-title { font-size: 28px; }
     .hero-description { font-size: 16px; }
     .projects-grid { grid-template-columns: 1fr; }
+}
+
+.nav-logo {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+}
+
+/* Le style calligraphie à boucles en gris clair */
+.nav-author {
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    color: #b0a28c;       
+    margin-left: 10px;    
+    vertical-align: -2px; 
+    letter-spacing: 0.5px; 
 }

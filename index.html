@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio | Développeur & Administrateur Systèmes</title>
+    <title>Portfolio de Malo Crespel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="apple-nav">
         <div class="nav-container">
-            <span class="nav-logo">Portfolio</span>
+            <span class="nav-logo">
+                Portfolio <span class="nav-author">de Malo Crespel--Le Vavasseur Baudry</span>
+            </span>
             <div class="nav-links">
                 <a href="#projets-cyber">Sécurité</a>
                 <a href="#projets-sysadmin">Système & Réseau</a>
@@ -21,7 +24,7 @@
 
     <header class="hero-section">
         <div class="container">
-            <span class="hero-subtitle">Étudiant en Informatique</span>
+            <span class="hero-subtitle">Étudiant en Cybersécurité & Hacking Ethique</span>
             <h1 class="hero-title">Concevoir des solutions fiables, sécurisées et performantes.</h1>
             <p class="hero-description">
                 Passionné par la cybersécurité, l'administration système et le développement logiciel. 
@@ -37,38 +40,39 @@
             <h2 class="category-title">Sécurité & Analyse de Menaces</h2>
             <div class="projects-grid">
 
-                <div class="project-card">
-                    <span class="badge badge-cyber">Cybersécurité</span>
-                    <h3>Analyse Infostealer & Redondance</h3>
-                    <p class="project-summary">Étude d'un malware de type usurpation de données et implémentation d'une option de redondance sur disque.</p>
-                    <div class="star-method">
-                        <p><strong>Situation :</strong> Analyse de vulnérabilité et gestion des risques de perte de données.</p>
-                        <p><strong>Tâche :</strong> Sécuriser les données face aux malwares et contrer les pannes matérielles.</p>
-                        <p><strong>Action :</strong> Conception d'un système de redondance de stockage pour protéger les logs critiques.</p>
-                        <p><strong>Résultat :</strong> Résilience des données accrue et meilleure compréhension des mécanismes d'infection.</p>
-                    </div>
-                </div>
+                
 
                 <div class="project-card">
-                    <span class="badge badge-cyber">Sécurité</span>
-                    <h3>Anonymator (Optimisation)</h3>
-                    <p class="project-summary">Amélioration et durcissement d'un système d'anonymisation du trafic réseau.</p>
+                    <span class="badge badge-cyber">Cybersécurité / IA</span>
+                    <h3>NEURO-SAS : Anonymiseur de Documents Multi-Couches</h3>
+                    <p class="project-summary">Développement d'un outil de purge définitive des données sensibles (PDF/DOCX) avant soumission à des IA tierces, garantissant la conformité RGPD.</p>
                     <div class="star-method">
-                        <p><strong>Situation :</strong> Projet axé sur la confidentialité et la protection de la vie privée en ligne.</p>
-                        <p><strong>Tâche :</strong> Améliorer le système existant pour réduire les fuites de métadonnées et optimiser les performances.</p>
-                        <p><strong>Action :</strong> Audit du code existant, réécriture des tunnels de routage et implémentation de protocoles de chiffrement plus robustes.</p>
-                        <p><strong>Résultat :</strong> Chiffrement renforcé et réduction du temps de latence du script de routage.</p>
+                        <p><strong>Situation :</strong> Risques majeurs de fuite de données et violation du Secret des Affaires lors de l'utilisation d'IA grand public (ChatGPT, etc.) en entreprise.</p>
+                        <p><strong>Tâche :</strong> Concevoir une application locale capable de détecter et neutraliser à 100% les données identifiables (textes et images) malgré les limites de compréhension contextuelle des IA.</p>
+                        <p><strong>Action :</strong> Création d'un moteur hybride (Regex + 3 couches d'IA locales via Ollama/Qwen) sous Streamlit, doublé d'un système de contrôle manuel (Human-in-the-loop) pour éditer le dictionnaire avant purge, et d'un mécanisme de blocage préventif des images.</p>
+                        <p><strong>Résultat :</strong> Core-système fonctionnel et étanche (zéro fuite via Git grâce au .gitignore). Validation technique du scan hybride et de l'export PDF sécurisé. Possibilité de modifier manuellement les éléments à banir.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <span class="badge badge-cyber">Cybersécurité</span>
-                    <h3>Audit de Sécurité : Gestionnaire de Mots de Passe</h3>
-                    <p class="project-summary">Analyse approfondie des vulnérabilités et durcissement des mécanismes de chiffrement d'une application de gestion de secrets.</p>
+                    <span class="badge badge-cyber">Cybersécurité / Audit</span>
+                    <h3>Audit de Sécurité Multi-Phases : Gestionnaire de Secrets</h3>
+                    <p class="project-summary">Réalisation d'un audit de sécurité complet (Boîte Noire, Grise et Blanche) sur une application critique de gestion de mots de passe d'entreprise, combinant tests d'intrusion et analyse de base de données.</p>
                     <div class="star-method">
-                        <p><strong>Situation :</strong> Évaluation de la robustesse d'un outil critique face aux attaques locales et distantes.</p>
-                        <p><strong>Tâche :</strong> Identifier les failles potentielles (injections, fuites mémoire, faiblesses de dérivation de clé).</p>
-                        <p><strong>Action :</strong> Analyse statique/dynamique du système, test des protocoles de chiffrement et audit du stockage des clés de chiffrement (master key).</p>
-                        <p><strong>Résultat :</strong> Rédaction d'un rapport de vulnérabilités et implémentation de correctifs (ex: salage renforcé, effacement des secrets en RAM).</p>
+                        <p><strong>Situation :</strong> Nécessité d'évaluer la robustesse d'un coffre-fort de secrets interne hautement exposé face aux risques d'intrusions externes, de compromissions de comptes et de fuites de données.</p>
+                        <p><strong>Tâche :</strong> Cartographier les surfaces d'attaque, auditer la configuration des jetons de session (JWT), évaluer l'étanchéité de la base de données et vérifier la conformité RGPD du système.</p>
+                        <p><strong>Action :</strong> Déploiement d'une méthodologie OWASP complète sous Kali Linux (Burp Suite, Nmap) : injection de payloads, développement d'un script d'infostealer sur mesure (POC d'exfiltration via canaux Discord/Ngrok) et audit du dump SQL (White Box).</p>
+                        <p><strong>Résultat :</strong> Identification de failles critiques (absence de Zero-Knowledge, stockage des jetons vulnérable, fuites nominatives). Rédaction d'un rapport professionnel et préconisation de remédiations prioritaires (chiffrement Client-Side, HttpOnly, Padding).</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <span class="badge badge-cyber">Cybersécurité / Red Team</span>
+                    <h3>PoC Infostealer : Simulation d'Exfiltration Avancée</h3>
+                    <p class="project-summary">Développement d'un outil d'exfiltration de jetons de session (JWT) pour démontrer la vulnérabilité du stockage local face aux attaques par ingénierie sociale.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Stockage critique de jetons de rafraîchissement (Refresh Tokens Azure AD) en clair dans le LocalStorage, hautement exposé en cas de compromission du poste client.</p>
+                        <p><strong>Tâche :</strong> Concevoir un binaire furtif capable de récupérer ces secrets à distance, de contourner les détections antivirus basiques et de franchir les restrictions du réseau Wi-Fi de l'entreprise.</p>
+                        <p><strong>Action :</strong> Programmation du script en Python, compilé en exécutable autonome (.exe). Usurpation d'identité visuelle (spoofing) via l'injection d'une icône de Bloc-notes et d'une double extension (.txt.exe). Implémentation d'un double canal d'exfiltration (Ngrok + API Webhook Discord) pour contourner les règles du pare-feu.</p>
+                        <p><strong>Résultat :</strong> Preuve de concept 100 % réussie. Exfiltration furtive des jetons, génération de nouveaux accès persistants via Burp Suite et prise de contrôle totale à distance du compte cible sans détection périmétrique.</p>
                     </div>
                 </div>
 
@@ -81,7 +85,29 @@
 
                 <div class="project-card">
                     <span class="badge badge-sys">Infrastructure</span>
-                    <h3>NAS & Sauvegardes Automatisées</h3>
+                    <h3>NAS hardware ancien</h3>
+                    <p class="project-summary">Configuration complète d'un serveur de stockage en réseau avec automatisation des backups.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Besoin de centraliser et sécuriser l'ensemble des données locales.</p>
+                        <p><strong>Tâche :</strong> Automatiser les sauvegardes régulières sans intervention humaine.</p>
+                        <p><strong>Action :</strong> Déploiement de scripts de synchronisation (crontab/rsync) et gestion des droits d'accès utilisateurs.</p>
+                        <p><strong>Résultat :</strong> Système de backup 100% autonome et sécurisé contre les pertes accidentelles.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <span class="badge badge-sys">Infrastructure</span>
+                    <h3>Sauvegardes Automatisées sur NAS</h3>
+                    <p class="project-summary">Configuration complète d'un serveur de stockage en réseau avec automatisation des backups.</p>
+                    <div class="star-method">
+                        <p><strong>Situation :</strong> Besoin de centraliser et sécuriser l'ensemble des données locales.</p>
+                        <p><strong>Tâche :</strong> Automatiser les sauvegardes régulières sans intervention humaine.</p>
+                        <p><strong>Action :</strong> Déploiement de scripts de synchronisation (crontab/rsync) et gestion des droits d'accès utilisateurs.</p>
+                        <p><strong>Résultat :</strong> Système de backup 100% autonome et sécurisé contre les pertes accidentelles.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <span class="badge badge-sys">Infrastructure</span>
+                    <h3>Serveur Jellyfin</h3>
                     <p class="project-summary">Configuration complète d'un serveur de stockage en réseau avec automatisation des backups.</p>
                     <div class="star-method">
                         <p><strong>Situation :</strong> Besoin de centraliser et sécuriser l'ensemble des données locales.</p>
