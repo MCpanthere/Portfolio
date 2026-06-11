@@ -25,7 +25,7 @@ html {
 }
 
 .container {
-    max-width: 1040px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -119,7 +119,7 @@ html {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Force une grille propre à 2 colonnes */
     gap: 24px;
 }
 
@@ -133,24 +133,67 @@ html {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-.project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+/* Le deuxième style : prend la place de 2 cartes */
+.project-card-link.featured {
+    grid-column: span 2;
 }
 
-.project-card h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 12px;
-    margin-bottom: 8px;
-    letter-spacing: -0.3px;
+.project-card-link.featured .project-card {
+    background: linear-gradient(145deg, var(--card-bg), rgba(0, 113, 227, 0.01));
+    border: 1px solid rgba(0, 113, 227, 0.15);
+    padding: 56px; /* Espace interne géant style Apple Store Card */
+    margin-bottom: 20px; /* Isole visuellement la carte du reste de la grille */
+    min-height: 420px; /* Donne une vraie carrure à la case */
 }
 
-.project-summary {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 18px;
+/* Organisation interne asymétrique */
+.project-body-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* La colonne de gauche est plus large */
+    gap: 48px; /* Énorme espace entre le texte et l'image */
+    margin-top: 24px;
+    align-items: center;
+}
+
+.project-body-left h3 {
+    font-size: 28px; /* Titre massif */
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    line-height: 1.2;
+}
+
+.project-story {
+    font-size: 15px;
+    color: #515154;
+    line-height: 1.7; /* Interlignage aéré style Apple Editorial */
+}
+
+/* Zone de l'image animée */
+.project-visual-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.project-animation {
+    width: 100%;
+    max-height: 320px; /* L'affichage de ton interface prend plus de place */
+    object-fit: cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06); /* Ombre plus diffuse et haut de gamme */
+    background-color: #f5f5f7;
+}
+
+.project-body-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+    margin-top: 32px; /* Plus d'espace sous le header de la carte */
+    align-items: center;
 }
 
 /* --- Méthode STAR stylisée --- */
@@ -198,6 +241,13 @@ html {
     .hero-title { font-size: 28px; }
     .hero-description { font-size: 16px; }
     .projects-grid { grid-template-columns: 1fr; }
+    .project-card-link.featured { grid-column: span 1; }
+    
+    /* Bascule le layout interne en une seule colonne sur mobile */
+    .project-body-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
 }
 
 .nav-logo {
@@ -214,4 +264,43 @@ html {
     margin-left: 10px;    
     vertical-align: -2px; 
     letter-spacing: 0.5px; 
+}
+
+/* --- Styles pour les cartes cliquables (Storytelling) --- */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.read-more-btn {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-5px);
+}
+
+/* Animation : quand on survole la carte, le bouton Apple apparaît et glisse */
+.project-card:hover .read-more-btn {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.project-story {
+    font-size: 14px;
+    color: #424245;
+    margin-top: 14px;
+    line-height: 1.6;
+}
+
+.project-story strong {
+    color: var(--text-color);
 }

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURO-SAS // Étude de Cas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* --- Thème Apple Lumineux & Asymétrique --- */
+        body {
+            background-color: #f5f5f7 !important; /* Le gris clair emblématique d'Apple */
+            color: #1d1d1f !important; /* Texte noir de base */
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        /* Ajustement de la Nav pour correspondre au fond clair */
+        .apple-nav {
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-bottom: 1px solid #e8e8ed !important;
+        }
+
+        .project-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 24px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #86868b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            transition: color 0.2s, transform 0.2s;
+        }
+        .back-link:hover {
+            color: #0071e3;
+            transform: translateX(-4px);
+        }
+
+        /* Layout Asymétrique en deux colonnes */
+        .project-layout {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        /* Colonne Gauche : Infos projet */
+        .project-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .project-main-title {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+        }
+
+        .sidebar-meta {
+            margin-top: 32px;
+            border-top: 1px solid #e8e8ed;
+            padding-top: 24px;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #86868b;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Colonne Droite : Blocs STAR */
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .brief-box {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #424245;
+        }
+
+        /* Structure des fiches STAR */
+        .star-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .star-heading {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .star-heading.situation { color: #0071e3; } /* Bleu */
+        .star-heading.tache { color: #ff9500; }     /* Orange */
+        .star-heading.action { color: #34c759; }    /* Vert */
+        .star-heading.resultat { color: #5856d6; }  /* Violet */
+
+        .star-text-block {
+            background-color: #ffffff; /* Blanc pur pour faire ressortir les fiches */
+            border: 1px solid #e8e8ed;
+            border-radius: 18px;
+            padding: 32px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #1d1d1f;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01); /* Ombre ultra légère */
+        }
+
+        .star-text-block ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 16px;
+        }
+
+        .star-text-block li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: #424245;
+        }
+
+        .star-text-block li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: bold;
+        }
+
+        .star-text-block strong {
+            color: #1d1d1f;
+        }
+
+        /* Stack Technique */
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+
+        .tech-item {
+            background-color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #424245;
+            border: 1px solid #e8e8ed;
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .project-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .project-sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="apple-nav">
+        <div class="nav-container">
+            <span class="nav-logo">
+                Portfolio <span class="nav-author">de Malo Crespel--Le Vavasseur Baudry</span>
+            </span>
+            <div class="nav-links">
+                <a href="../index.html#projets-cyber">Sécurité</a>
+                <a href="../index.html#projets-sysadmin">Système & Réseau</a>
+                <a href="../index.html#projets-dev">Développement</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-container">
+        <a href="../index.html" class="back-link">← Retour aux projets</a>
+
+        <div class="project-layout">
+            
+            <aside class="project-sidebar">
+                <h1 class="project-main-title">NEURO-SAS</h1>
+                <span class="badge badge-cyber">Cybersécurité / IA</span>
+                
+                <div class="sidebar-meta">
+                    <span class="meta-label">Type de Projet</span>
+                    <p style="font-size: 14px; color: #1d1d1f; font-weight: 500;">Recherche & Développement Personnel</p>
+                </div>
+
+                <div class="sidebar-meta">
+                    <span class="meta-label">Technologies Clés</span>
+                    <ul class="tech-list">
+                        <li class="tech-item">Python 3.12</li>
+                        <li class="tech-item">Streamlit</li>
+                        <li class="tech-item">Ollama (Qwen 2.5)</li>
+                        <li class="tech-item">PyMuPDF</li>
+                        <li class="tech-item">Pillow</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="project-content">
+                
+                <div class="brief-box">
+                    NEURO-SAS répond à une problématique critique et ultra-récente : sécuriser l'usage des intelligences artificielles génératives en entreprise en éliminant les risques de fuite de données vers des serveurs tiers.
+                </div>
+
+                <section class="star-section">
+                    <div class="star-heading situation">
+                        <span>●</span> Situation
+                    </div>
+                    <div class="star-text-block">
+                        Avec l'essor du phénomène de <em>Shadow AI</em>, les collaborateurs soumettent régulièrement des documents internes confidentiels (codes sources, rapports d'audit, contrats) sur des plateformes grand public type ChatGPT pour accélérer leurs flux de travail, brisant ainsi les règles de conformité RGPD et le Secret des Affaires.
+                    </div>
+                </section>
+
+                <section class="star-section">
+                    <div class="star-heading tache">
+                        <span>●</span> Tâche
+                    </div>
+                    <div class="star-text-block">
+                        L'objectif était de concevoir un "sas de purification" souverain et local. L'application devait être capable d'intercepter les fichiers (PDF/DOCX), d'isoler l'intégralité des chaînes identifiables et des visuels compromettants, tout en optimisant la détection pour qu'un petit modèle de langage s'exécutant localement sur un poste de travail achemine un niveau de fiabilité d'entreprise.
+                    </div>
+                </section>
+
+                <section class="star-section">
+                    <div class="star-heading action">
+                        <span>●</span> Action
+                    </div>
+                    <div class="star-text-block">
+                        Développement d'une interface d'analyse sous <strong>Streamlit</strong> reposant sur une architecture de traitement étanche :
+                        <ul>
+                            <li><strong>Moteur de Scan Hybride :</strong> Couplage d'expressions régulières (Regex) pour les données normées et de trois agents LLM locaux successifs (Ollama / Qwen) chargés d'analyser le contexte sémantique et métier.</li>
+                            <li><strong>Ingénierie Human-in-the-loop :</strong> Création d'un tableau de bord de supervision permettant à un opérateur de valider, ajouter ou modifier à la volée le dictionnaire de correspondance JSON généré avant la purge physique.</li>
+                            <li><strong>Neutralisation Conservatoire :</strong> Masquage systématique des conteneurs d'images par des calques opaques pour parer à toute fuite d'information visuelle non textuelle (logos, schémas).</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="star-section">
+                    <div class="star-heading resultat">
+                        <span>●</span> Résultat
+                    </div>
+                    <div class="star-text-block">
+                        Architecture logicielle finalisée et cœur de calcul opérationnel. Le système garantit un traitement 100 % local (aucune donnée brute ne transite par Internet). Le pipeline génère un document final expurgé, prêt à être soumis aux LLM tiers en toute conformité. La sécurité du code source lui-même a été intégrée via des politiques d'exclusion strictes dans le fichier <code>.gitignore</code>.
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="apple-footer">
+        <div class="container">
+            <p>© 2026 | Portfolio professionnel. Conçu avec soin.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

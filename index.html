@@ -42,17 +42,35 @@
 
                 
 
-                <div class="project-card">
-                    <span class="badge badge-cyber">Cybersécurité / IA</span>
-                    <h3>NEURO-SAS : Anonymiseur de Documents Multi-Couches</h3>
-                    <p class="project-summary">Développement d'un outil de purge définitive des données sensibles (PDF/DOCX) avant soumission à des IA tierces, garantissant la conformité RGPD.</p>
-                    <div class="star-method">
-                        <p><strong>Situation :</strong> Risques majeurs de fuite de données et violation du Secret des Affaires lors de l'utilisation d'IA grand public (ChatGPT, etc.) en entreprise.</p>
-                        <p><strong>Tâche :</strong> Concevoir une application locale capable de détecter et neutraliser à 100% les données identifiables (textes et images) malgré les limites de compréhension contextuelle des IA.</p>
-                        <p><strong>Action :</strong> Création d'un moteur hybride (Regex + 3 couches d'IA locales via Ollama/Qwen) sous Streamlit, doublé d'un système de contrôle manuel (Human-in-the-loop) pour éditer le dictionnaire avant purge, et d'un mécanisme de blocage préventif des images.</p>
-                        <p><strong>Résultat :</strong> Core-système fonctionnel et étanche (zéro fuite via Git grâce au .gitignore). Validation technique du scan hybride et de l'export PDF sécurisé. Possibilité de modifier manuellement les éléments à banir.</p>
+                <a href="./html/neurosas.html" class="project-card-link featured">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="badge badge-cyber">Cybersécurité / IA</span>
+                            <span class="read-more-btn">Découvrir le projet →</span>
+                        </div>
+                        
+                        <div class="project-body-layout">
+                            <div class="project-body-left">
+                                <h3>NEURO-SAS : Anonymiseur de Documents Multi-Couches</h3>
+                                <p class="project-story">
+                                    En entreprise, la tentation d'envoyer des documents <strong>confidentiels</strong> sur des IA grand public pour gagner du temps est omniprésente. Cela engendre pourtant des <strong>risques critiques</strong> de fuite de propriété intellectuelle et de non-conformité réglementaire (RGPD). Pour neutraliser cette faille humaine, j'ai pris l'initiative de concevoir un <strong>sas de sécurité local</strong>. <br><br>
+                                    En couplant des filtres Regex et trois couches d'IA souveraines s'exécutant à <strong>100% sur la machine</strong>, NEURO-SAS purge définitivement les données sensibles d'un document avant qu'elles ne quittent le réseau d'entreprise.
+                                </p>
+                            </div>
+                            
+                            <div class="project-visual-right">
+                                <video autoplay loop muted playsinline class="project-animation" id="video-neuro">
+                                    <source src="images/neuro-sas-preview.mp4" type="video/mp4">
+                                </video>
+
+                                <script>
+                                    // Force la vidéo à se lire 2,5 fois plus vite
+                                    document.getElementById('video-neuro').playbackRate = 2.5; 
+                                </script>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <div class="project-card">
                     <span class="badge badge-cyber">Cybersécurité / Audit</span>
                     <h3>Audit de Sécurité Multi-Phases : Gestionnaire de Secrets</h3>
@@ -136,7 +154,7 @@
             <h2 class="category-title">Développement Logiciel</h2>
             <div class="projects-grid">
 
-                <div class="project-card">
+                <div class="project-card featured">
                     <span class="badge badge-dev">Génie Logiciel</span>
                     <h3>Earth Tech Project</h3>
                     <p class="project-summary">Développement d'une application axée sur les problématiques environnementales.</p>
