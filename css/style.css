@@ -304,3 +304,67 @@ html {
 .project-story strong {
     color: var(--text-color);
 }
+
+
+/* --- Flexibilité des layouts (Image à gauche / Texte à droite) --- */
+
+/* Quand la carte a la classe .inverse, on inverse l'ordre des colonnes de la grille */
+.project-card-link.featured.inverse .project-body-layout {
+    grid-template-columns: 0.8fr 1.2fr; /* L'image prend 0.8 et le texte prend 1.2 à droite */
+}
+
+/* On change l'ordre d'affichage visuel des colonnes */
+.project-card-link.featured.inverse .project-visual-left {
+    grid-column: 1; /* Force l'image dans la première colonne (gauche) */
+}
+
+.project-card-link.featured.inverse .project-body-left {
+    grid-column: 2; /* Force le texte dans la deuxième colonne (droite) */
+}
+
+/* --- Structure de l'histoire (Listes minimalistes sous forme de grille) --- */
+.project-story-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.story-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.story-icon {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.story-item p {
+    font-size: 14.5px;
+    color: #424245;
+    line-height: 1.6;
+    margin: 0 !important;
+}
+
+.story-item strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* --- Ajustement du responsive mobile pour l'inversion --- */
+@media (max-width: 768px) {
+    .project-card-link.featured.inverse .project-body-layout {
+        grid-template-columns: 1fr !important; /* Repasse sur une colonne sur mobile */
+    }
+    
+    .project-card-link.featured.inverse .project-body-left {
+        grid-column: 1; /* Remet le texte en premier sur mobile */
+    }
+    
+    .project-card-link.featured.inverse .project-visual-left {
+        grid-column: 1;
+        grid-row: 2; /* Glisse l'image sous le texte sur mobile pour l'ergonomie */
+    }
+}
