@@ -1,0 +1,259 @@
+/* ==========================================================================
+   CSS Partagé : Études de Cas & Fiches Projets (Style Apple Store Layout)
+   ========================================================================== */
+
+/* --- Thème Global & Typographie --- */
+body {
+    background-color: #f5f5f7 !important; /* Gris neutre Apple */
+    color: #1d1d1f !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+/* Alignement de la barre de navigation */
+.apple-nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-bottom: 1px solid #e8e8ed !important;
+}
+
+/* --- Conteneur Principal --- */
+.project-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+/* Bouton Retour Historique */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #86868b;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.back-link:hover {
+    color: #0071e3; /* Bleu signature */
+    transform: translateX(-4px);
+}
+
+/* --- Layout Principal Asymétrique (Desktop) --- */
+.project-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+/* Colonne Informations Gauche Sticky */
+.project-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.project-main-title {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: #1d1d1f;
+}
+
+.sidebar-meta {
+    margin-top: 32px;
+    border-top: 1px solid #e8e8ed;
+    padding-top: 24px;
+}
+
+.meta-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #86868b;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Colonne Contenu Droite */
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.brief-box {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #424245;
+}
+
+/* --- Encadré Alerte Éthique / Disclaimer (Optionnel) --- */
+.disclaimer-box {
+    background-color: #fff3f2;
+    border: 1px solid #ffccd0;
+    border-radius: 14px;
+    padding: 20px 24px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d9381e;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.disclaimer-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* --- Cartes de la Méthode STAR --- */
+.star-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.star-heading {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Couleurs thématiques distinctes par étape */
+.star-heading.situation { color: #0071e3; }
+.star-heading.tache     { color: #ff9500; }
+.star-heading.action    { color: #34c759; }
+.star-heading.resultat  { color: #5856d6; }
+.star-heading.roadmap   { color: #00a3a6; }
+
+.star-text-block {
+    background-color: #ffffff;
+    border: 1px solid #e8e8ed;
+    border-radius: 18px;
+    padding: 32px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1d1d1f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+}
+
+/* Gestion des listes à puces à flèches */
+.star-text-block ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+}
+
+.star-text-block li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    color: #424245;
+}
+
+.star-text-block li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #34c759; /* Vert par défaut pour les flèches */
+    font-weight: bold;
+}
+
+/* --- Badges de technologies (Sidebar) --- */
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.tech-item {
+    background-color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #424245;
+    border: 1px solid #e8e8ed;
+}
+
+/* --- Fenêtre logicielle macOS Universelle --- */
+.video-window-container {
+    background-color: #ffffff;
+    border: 1px solid #e8e8ed;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.window-header {
+    background-color: #f5f5f7;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: relative;
+    border-bottom: 1px solid #e8e8ed;
+}
+
+.window-dots {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    left: 16px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-close    { background-color: #ff5f56; }
+.dot-minimize { background-color: #ffbd2e; }
+.dot-expand   { background-color: #27c93f; }
+
+.window-title {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #86868b;
+    font-weight: 500;
+}
+
+.window-content {
+    background-color: #1c1c1e; /* Fond sombre pour les vidéos/images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.case-study-video, .case-study-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* --- Responsive Adaptatif Mobile --- */
+@media (max-width: 850px) {
+    .project-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .project-sidebar {
+        position: relative;
+        top: 0;
+    }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoC Infostealer // Étude de Cas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-sheets.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="apple-nav">
+        <div class="nav-container">
+            <span class="nav-logo">
+                Portfolio <span class="nav-author">de Malo Crespel--Le Vavasseur Baudry</span>
+            </span>
+            <div class="nav-links">
+                <a href="../index.html#projets-cyber">Sécurité</a>
+                <a href="../index.html#projets-sysadmin">Système & Réseau</a>
+                <a href="../index.html#projets-dev">Développement</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-container">
+        <a href="../index.html" class="back-link">← Retour aux projets</a>
+
+        <div class="project-layout">
+            
+            <aside class="project-sidebar">
+                <h1 class="project-main-title">POC INFOSTEALER</h1>
+                <span class="badge badge-cyber">Red Team / PoC</span>
+                
+                <div class="sidebar-meta">
+                    <span class="meta-label">Type de Projet</span>
+                    <p style="font-size: 14px; color: #1d1d1f; font-weight: 500;">Simulation d'Attaque & Scripting Offensif</p>
+                </div>
+
+                <div class="sidebar-meta">
+                    <span class="meta-label">Outils & Concepts</span>
+                    <ul class="tech-list">
+                        <li class="tech-item">Python 3</li>
+                        <li class="tech-item">Azure AD Tokens</li>
+                        <li class="tech-item">Discord API Webhooks</li>
+                        <li class="tech-item">Ngrok Tunnels</li>
+                        <li class="tech-item">Spoofing Masquage</li>
+                        <li class="tech-item">Burp Suite</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="project-content">
+                
+                <div class="brief-box">
+                    Développement contrôlé d'un malware de démonstration (Infostealer) axé sur la récupération ciblée de jetons d'authentification persistants au sein des environnements d'entreprise.
+                </div>
+
+                <div class="disclaimer-box">
+                    <span class="disclaimer-icon">⚠️</span>
+                    <div>
+                        <strong>Note relative à la sécurité :</strong> Pour des raisons évidentes de confidentialité et de responsabilité éthique, les détails techniques approfondis, les mécanismes de contournement spécifiques ainsi que le code source brut de ce binaire ne seront pas divulgués sur ce portfolio. Cette étude se concentre uniquement sur la modélisation théorique de la menace et les mesures de remédiation adaptées.
+                    </div>
+                </div>
+
+                <section class="star-section">
+                    <div class="star-heading situation">
+                        <span>●</span> Situation
+                    </div>
+                    <div class="star-text-block">
+                        Constat d'un risque architectural majeur : le stockage en clair ou faiblement sécurisé de jetons de rafraîchissement (tels que les <strong>Refresh Tokens Azure AD</strong>) au sein du <code>LocalStorage</code> des navigateurs sur les postes clients. Une telle configuration expose directement l'organisation à un piratage critique en cas de compromission initiale de la machine d'un collaborateur (via hameçonnage ou ingénierie sociale).
+                    </div>
+                </section>
+
+                <section class="star-section">
+                    <div class="star-heading tache">
+                        <span>●</span> Tâche
+                    </div>
+                    <div class="star-text-block">
+                        L'objectif était de concevoir un binaire autonome factice, capable d'isoler et d'extraire ces secrets spécifiques de manière asynchrone, tout en validant la capacité d'un attaquant à échapper aux signatures de fichiers génériques et à franchir les politiques de filtrage réseau standard d'un Wi-Fi d'entreprise.
+                    </div>
+                </section>
+
+                <section class="star-section">
+                    <div class="star-heading action">
+                        <span>●</span> Action
+                    </div>
+                    <div class="star-text-block">
+                        Architecture globale du script et logique d'exécution mise en place :
+                        <ul>
+                            <li><strong>Ingénierie Sociale & Dissimulation :</strong> Script développé sous Python puis converti en exécutable autonome portable. Application de techniques d'usurpation d'apparence via l'intégration d'icônes trompeuses (Bloc-notes Windows) et l'emploi d'une double extension (<code>.txt.exe</code>) pour tromper la vigilance de l'utilisateur.</li>
+                            <li><strong>Canaux de Fuite Furtifs :</strong> Configuration d'un pipeline d'exfiltration résilient exploitant des protocoles légitimes et fréquemment autorisés par les pare-feux d'entreprise, à l'aide d'infrastructures de tunnels éphémères (Ngrok) et de webhooks d'API (Discord).</li>
+                            <li><strong>Validation Post-Exploitation :</strong> Réinjection manuelle et analyse des structures de jetons capturés via Burp Suite pour étudier le maintien des sessions à distance.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="star-section">
+                    <div class="star-heading resultat">
+                        <span>●</span> Résultat
+                    </div>
+                    <div class="star-text-block">
+                        Preuve de concept fonctionnelle validée en laboratoire fermé. L'exercice a démontré l'exfiltration réussie des jetons de session sans levée d'alertes par le pare-feu périmétrique, permettant une persistance d'accès immédiate sur le compte de la victime. 
+                        <br><br>
+                        Les conclusions de ce projet ont permis de mettre en évidence la nécessité absolue de bannir le stockage local non chiffré des identifiants au profit de mécanismes durcis de type cookies <code>HttpOnly</code> et de politiques d'accès conditionnel strictes.<br>
+                        <br>Les antivirus classiques ne détectent pas l'infostealer. En revanche, lors des tests, les EDR bloquent le malware en le mettant en quarantaine sans alerter l'utilisateur.
+                    </div>
+                </section>
+
+                <div class="video-window-container">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot dot-close"></span>
+                            <span class="dot dot-minimize"></span>
+                            <span class="dot dot-expand"></span>
+                        </div>
+                        <div class="window-title">Console de Test Offensif — Exfiltration Chiffrée (Laboratoire)</div>
+                    </div>
+                    <div class="window-content">
+                        <img src="../images/infostealer-preview.png" alt="Espace prévu pour la capture d'écran du PoC Infostealer" class="case-study-image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="apple-footer">
+        <div class="container">
+            <p>© 2026 | Portfolio professionnel. Conçu avec soin.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

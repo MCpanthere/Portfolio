@@ -93,17 +93,22 @@
                         </div>
                     </div>
                 </a>
-                <div class="project-card">
-                    <span class="badge badge-cyber">Cybersécurité / Red Team</span>
-                    <h3>PoC Infostealer : Simulation d'Exfiltration Avancée</h3>
-                    <p class="project-summary">Développement d'un outil d'exfiltration de jetons de session (JWT) pour démontrer la vulnérabilité du stockage local face aux attaques par ingénierie sociale.</p>
-                    <div class="star-method">
-                        <p><strong>Situation :</strong> Stockage critique de jetons de rafraîchissement (Refresh Tokens Azure AD) en clair dans le LocalStorage, hautement exposé en cas de compromission du poste client.</p>
-                        <p><strong>Tâche :</strong> Concevoir un binaire furtif capable de récupérer ces secrets à distance, de contourner les détections antivirus basiques et de franchir les restrictions du réseau Wi-Fi de l'entreprise.</p>
-                        <p><strong>Action :</strong> Programmation du script en Python, compilé en exécutable autonome (.exe). Usurpation d'identité visuelle (spoofing) via l'injection d'une icône de Bloc-notes et d'une double extension (.txt.exe). Implémentation d'un double canal d'exfiltration (Ngrok + API Webhook Discord) pour contourner les règles du pare-feu.</p>
-                        <p><strong>Résultat :</strong> Preuve de concept 100 % réussie. Exfiltration furtive des jetons, génération de nouveaux accès persistants via Burp Suite et prise de contrôle totale à distance du compte cible sans détection périmétrique.</p>
+                <a href="./html/infostealer.html" class="project-card-link">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="badge badge-cyber">Cybersécurité / Red Team</span>
+                            <span class="read-more-btn">Découvrir le PoC →</span>
+                        </div>
+                        
+                        <div class="project-body-left" style="margin-top: 24px;">
+                            <h3>PoC Infostealer : Simulation d'Exfiltration Avancée</h3>
+                            <p class="project-story">
+                                Face à la vulnérabilité du stockage en clair de jetons de rafraîchissement (Refresh Tokens Azure AD) dans le LocalStorage du poste client, l'objectif était de concevoir un <strong>binaire furtif de démonstration</strong>. Cet outil devait être capable de récupérer ces secrets à distance, d'usurper une identité visuelle (spoofing via une icône de Bloc-notes et double extension <code>.txt.exe</code>) et de franchir les restrictions réseau. <br><br>
+                                Développé en Python et compilé en exécutable autonome, le script implémente un <strong>double canal d'exfiltration</strong> (Ngrok et API Webhook Discord) contournant les règles du pare-feu. La preuve de concept s'est avérée 100 % réussie, démontrant la possibilité de générer des accès persistants et de prendre le contrôle à distance du compte cible sans déclencher de détection périmétrique.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <div class="project-card lab-card">
                     <div class="project-header">
                         <span class="badge badge-cyber" style="background-color: #f5f5f7; color: #86868b;">R&D / En cours</span>
